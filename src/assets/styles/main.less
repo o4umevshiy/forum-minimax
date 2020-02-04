@@ -1,0 +1,247 @@
+@import "fonts";
+
+
+// ---- [ Common ] ----
+body, html{
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+section{
+  width: 100%; height: 100%;
+}
+
+// Var
+@orange     : #ffa400;
+@gray-light : #d4d4d4;
+@gray-dark  : #999999;
+@blue       : #8ab7ff;
+
+// Main Nav
+.main-nav{
+  position: absolute;
+  top:50%; left:50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+}
+.main-nav_item{
+  background: @orange;
+  font-size: 46px;
+  border:none;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  margin:0 20px;
+  cursor: pointer;
+}
+
+// ---- [ Users ] ----
+.users{
+  padding: 0 90px;
+  box-sizing: border-box;
+}
+.users-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.users-top_item{
+  &:nth-child(1),
+  &:nth-child(3){
+    width: 20%;
+    flex: 0 0 20%;
+    img{
+      max-width: 100%;
+    }
+  }
+  &:nth-child(2){
+    width: 60%;
+    flex: 0 0 60%;
+    text-align: center;
+    padding-top: 100px;
+  }
+}
+.users-title{
+  font-family: @font-title;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.table{
+  &__first{
+    margin-top: -11vh;
+    margin-left: 18vw;
+  }
+}
+.table-item{
+  display: inline-flex;
+  width: 16vw;
+  height: 8vh;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  background: @gray-light;
+  border-radius: 8px;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 40px;
+  &__active{
+    background: @orange;
+    .table-number{
+      color: #000;
+    }
+  }
+}
+.table-number{
+  font-size: 40px;
+  margin-bottom: -10px;
+  margin-right: 14px;
+  color: @gray-dark;
+  font-family: @font-number;
+}
+.table-text{
+  font-size: 22px;
+  line-height: 24px;
+  font-family: @font-text;
+  font-weight: bold;
+  margin-bottom: -6px;
+}
+
+.screen2{
+  background: @orange;
+  transition: all 0.3s ease;
+  &.active{
+    background: #fff;
+    .black-box{
+      top: 15%; right: 10%;
+      height: 20vh;
+    }
+  }
+}
+.black-box{
+  position: absolute;
+  height: 70vh;
+  top:60%; right:50%;
+  transform: translate(50%, -50%);
+  transition: all 0.8s ease;
+}
+
+.box-list{
+  width: 60vw;
+  position: absolute;
+  top:60%; left:50%;
+  transform: translate(-50%, -50%);
+}
+.box-item{
+  clear: both;
+  margin-bottom: 60px;
+  padding-left: 140px;
+  position: relative;
+  min-height: 120px;
+}
+.box-index{
+  font-family: @font-number;
+  font-size: 82px;
+  background: @orange;
+  float: left;
+  width: 120px; height: 120px;
+  text-align: center;
+  line-height: 138px;
+  border-radius: 8px;
+  margin-right: 20px;
+  position: absolute;
+  top:8px; left:0;
+}
+.box-name{
+  font-size: 50px;
+  font-family: @font-text;
+  font-weight: bold;
+  margin-top: -20px;
+}
+.box-text{
+  font-size: 20px;
+  font-family: @font-text;
+}
+
+
+// ---- [ Admin ] ----
+.admin{
+  padding: 4vh 4vw;
+  box-sizing: border-box;
+}
+.admin-nav{
+  width: 35vw;
+  height: 100/9vh;
+  margin-right: 1vw;
+  margin-bottom: 2vh;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.admin-nav-item{
+  font-size: 40px;
+  font-family: @font-text;
+  width: 23%;
+  height: 100%;
+  background: @blue;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  &:active{
+    box-shadow: inset 1px 1px 4px 1px rgba(0, 0, 0, 0.26);
+  }
+}
+
+.admin-list-item{
+  cursor: pointer;
+  width: 17vw;
+  height: 100/9vh;
+  margin-bottom: 2vh;
+  margin-right: 1vw;
+  display: inline-flex;
+  box-sizing: border-box;
+  border: 2px solid @gray-dark;
+  background: #fff;
+  vertical-align: top;
+  border-radius: 8px;
+  align-items: center;
+  padding: 0 20px;
+  &__main{
+    background: @gray-light;
+  }
+}
+
+.btns{
+  position: relative;
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top:50%; left:50%;
+    width: 100%; height: 100%;
+    padding: 4px;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background: #a2c501;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+  }
+  &.last-action{
+    &:after{
+      opacity: 1;
+    }
+  }
+}
+
+// ---- [ Animation ] ----
+.fade-enter-active, .fade-leave-active {
+  transition: all .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
