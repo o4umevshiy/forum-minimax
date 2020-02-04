@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    screen : 2,
+    screen : 1,
     list : [
       { index : '01', name : 'Мышление и сознание', text : 'Что такое мысль? Как наш мозг принимает решения?  Неосознаваемые процессы. Что такое сознание? Интерпретатор. Может ли сознание влиять на бессознательную работу мозга? Как устроена память? Как на нее влияет возраст и образ жизни?', status : 0 },
       { index : '02', name : 'Наука', text : 'Чем научное мышление отличается от ненаучного? Критическая проверка гипотез. Как организовать корректный эксперимент?  Научные парадигмы. Как устроена современная наука? Как распознать лженауку? Наиболее распространенные лженаучные идеи и их опровержение.  ', status : 0 },
@@ -42,21 +42,31 @@ export default new Vuex.Store({
       { index : '33', name : 'Мотивация', text : 'Как возникают мотивы нашего поведения? Иерархия потребностей. Как формируется система ценностей в человеке и в обществе? Как понимается смысл жизни в разных культурах? Самореализация, служение идеалам, стремление к счастью – что еще наполняет жизнь смыслом? ', status : 0 },
     ],
     boxList : [
-      1, 9 , 24
     ]
   },
   mutations: {
     toggleStatusItem : function (state, index) {
-      if( state.list[index].status === 0 ){
+      if( state.list[index].status === 0 && state.boxList.length < 3 ){
         state.list[index].status = 1;
-      }else{
-        state.list[index].status = 0;
+        state.boxList.push(index);
       }
     },
+    setScreen : function (state, index) {
+      state.screen = parseInt(index);
+    },
+    clearItemBox : function (state) {
+      state.boxList = [];
+    }
   },
   actions: {
     changeItem : function ({commit}, index) {
       commit('toggleStatusItem', index);
+    },
+    changeScreen : function ({commit}, index) {
+      commit('setScreen', index);
+    },
+    clearBox : function ({commit}) {
+      commit('clearItemBox');
     }
   },
 })

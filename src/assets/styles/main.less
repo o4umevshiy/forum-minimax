@@ -118,6 +118,10 @@ section{
       top: 15%; right: 10%;
       height: 20vh;
     }
+    .box-list{
+      opacity: 1;
+      transition: opacity .3s .5s ease;
+    }
   }
 }
 .black-box{
@@ -133,6 +137,8 @@ section{
   position: absolute;
   top:60%; left:50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 .box-item{
   clear: both;
@@ -212,6 +218,9 @@ section{
   padding: 0 20px;
   &__main{
     background: @gray-light;
+  }
+  &__active{
+    background: @orange;
   }
 }
 

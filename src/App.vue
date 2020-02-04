@@ -25,7 +25,14 @@
 	export default{
 	  data(){
 	    return{
-	      typeView : 1 // 1 - Users, 2 - Admin
+	      typeView : 0 // 1 - Users, 2 - Admin
+			}
+		},
+		created(){
+	    if( window.location.pathname.replace('/', '') === 'admin' ){
+	      this.typeView = 2;
+			}else{
+        this.typeView = 1;
 			}
 		},
 		components: {

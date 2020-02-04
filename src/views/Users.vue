@@ -18,7 +18,6 @@
 	export default {
 	  data(){
 	    return{
-				lastMess : ''
 			}
 		},
 		computed : {
@@ -27,14 +26,25 @@
       }
 		},
 		methods : {
-      changeItem(index){
-        this.$store.dispatch('changeItem', index);
-        window.localStorage.message = index;
+      changeItem( arr ){
+
+        if( arr[0] === 'i' ){ // Если тема
+          arr = arr.replace('i', '');
+					this.$store.dispatch('changeItem', arr);
+				}else if( arr === 'b4' ){ // Если очистить бокс
+					this.$store.dispatch('clearBox');
+				}else if( arr === 'b1' || arr === 'b2' ){ // Переключить экран
+					this.$store.dispatch('changeScreen', arr[1]);
+				}
+
+        window.localStorage.message = '';
 			}
 		},
 		mounted(){
 	    setInterval( () => {
-				this.lastMess = window.localStorage.message
+	      if( window.localStorage.message ){
+			 		this.changeItem( window.localStorage.message );
+				}
 			}, 100);
 		},
 		components : {

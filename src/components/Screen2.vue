@@ -1,6 +1,6 @@
 <template>
 	<section class="screen2"
-		       v-bind:class="{ 'active' : numberItem !== 0 }">
+		       v-bind:class="{ 'active' : boxList.length !== 0 }">
 
 		<div class="users-top">
 			<div class="users-top_item">
@@ -15,15 +15,13 @@
 		</div>
 
 		<img src="../assets/img/03.png"
-				 class="black-box small"
-				 v-on:click="numberItem++">
+				 class="black-box small">
 
 		<div class="box-list">
 			<transition-group name="fade" mode="out-in">
 				<div class="box-item"
-					 v-for="(item, index) in boxList"
-					 v-if="index < numberItem"
-					 v-bind:key="index">
+						 v-for="item in boxList"
+						 v-bind:key="list[item].index">
 				<div class="box-index">
 					{{list[item].index}}
 				</div>
