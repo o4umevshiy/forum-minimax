@@ -92,6 +92,9 @@ section{
     .table-number{
       color: #000;
     }
+    .table-text{
+      opacity: 1;
+    }
   }
 }
 .table-number{
@@ -107,6 +110,8 @@ section{
   font-family: @font-text;
   font-weight: bold;
   margin-bottom: -6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .screen2{
@@ -228,7 +233,11 @@ section{
   &__active{
     background: @orange;
   }
+  .table-text{
+    opacity: 1 !important;
+  }
 }
+
 
 .btns{
   position: relative;

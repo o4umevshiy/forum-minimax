@@ -18,7 +18,8 @@
 		<div class="table table__first">
 			<div class="table-item"
 					 v-for="(item, index) in list"
-					 v-if="index < 3">
+					 v-if="index < 3"
+					 v-bind:class="{ 'table-item__active' : item.status }">
 				<div class="table-number">
 					{{item.index}}
 				</div>
