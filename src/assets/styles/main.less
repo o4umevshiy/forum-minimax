@@ -39,7 +39,7 @@ section{
 
 // ---- [ Users ] ----
 .users{
-  padding: 0 5vw;
+  padding: 0 1vw 0 2.4vw;
   box-sizing: border-box;
 }
 .users-top{
@@ -60,33 +60,37 @@ section{
     width: 60%;
     flex: 0 0 60%;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 6vh;
+    letter-spacing: 0.04em;
   }
 }
 .users-title{
   font-family: @font-title;
   font-size: 40px;
   text-transform: uppercase;
+  &_text{
+    margin-left: -1.4vw;
+  }
 }
 
 .table{
   &__first{
-    margin-top: -11vh;
-    margin-left: 18vw;
+    margin-top: -10.3vh;
+    margin-left: 19.2vw;
   }
 }
 .table-item{
+  width: 18.3vw;
+  margin-right: 0.9vw;
   display: inline-flex;
-  width: 16vw;
-  height: 8vh;
-  margin-right: 2vw;
-  margin-bottom: 3vh;
   background: @gray-light;
   border-radius: 8px;
   align-items: center;
   box-sizing: border-box;
-  padding-left: 16px;
-  padding-right: 40px;
+  padding-left: 11px;
+  padding-right: 11px;
+  height: 8.5vh;
+  margin-bottom: 3.3vh;
   &__active{
     background: @orange;
     .table-number{
@@ -98,30 +102,30 @@ section{
   }
 }
 .table-number{
-  font-size: 40px;
-  margin-bottom: -10px;
-  margin-right: 14px;
+  font-size: 45px;
+  margin-bottom: -8px;
+  margin-right: 11px;
   color: @gray-dark;
   font-family: @font-number;
 }
 .table-text{
-  font-size: 22px;
+  font-size: 24px;
   line-height: 24px;
   font-family: @font-text;
   font-weight: bold;
-  margin-bottom: -6px;
+  margin-bottom: -4px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .screen2{
-  background: @orange;
   transition: all 0.3s ease;
   &.active{
     background: #fff;
     .black-box{
-      top: 15%; right: 10%;
-      height: 20vh;
+      top: 13.2%;
+      right: 9.2%;
+      height: 20.6vh;
     }
     .box-list{
       opacity: 1;
@@ -131,49 +135,54 @@ section{
 }
 .black-box{
   position: absolute;
-  height: 70vh;
-  top:60%; right:50%;
+  height: 69.4vh;
+  top: 53.9%;
+  right: 50.3%;
   transform: translate(50%, -50%);
   transition: all 0.8s ease;
 }
 
 .box-list{
-  width: 60vw;
+  width: 88vw;
   position: absolute;
-  top:60%; left:50%;
-  transform: translate(-50%, -50%);
+  top: 59.9%; left: 2.4vw;
+  transform: translateY(-50%);
   opacity: 0;
   transition: opacity .3s ease;
 }
 .box-item{
   clear: both;
   margin-bottom: 60px;
-  padding-left: 140px;
   position: relative;
-  min-height: 120px;
+  min-height: 140px;
+  padding-left: 163px;
 }
 .box-index{
   font-family: @font-number;
-  font-size: 82px;
+  font-size: 105px;
   background: @orange;
   float: left;
-  width: 120px; height: 120px;
+  width: 136px;
+  height: 136px;
   text-align: center;
-  line-height: 138px;
-  border-radius: 8px;
-  margin-right: 20px;
+  line-height: 158px;
+  border-radius: 14px;
   position: absolute;
   top:8px; left:0;
 }
 .box-name{
-  font-size: 50px;
+  font-size: 46px;
   font-family: @font-text;
   font-weight: bold;
   margin-top: -20px;
 }
 .box-text{
-  font-size: 20px;
+  font-size: 23px;
   font-family: @font-text;
+  letter-spacing: 0.02em;
+  line-height: 32px;
+  position: relative;
+  top: -5px;
 }
 
 .audio-box{
