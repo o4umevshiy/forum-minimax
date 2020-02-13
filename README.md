@@ -1,8 +1,8 @@
 # forum-minimax
 
-## npm i
+## npm i 
 
-## npm run serve
+## npm start
 
 ## http://localhost:8080/ - Экран зрителей
 
