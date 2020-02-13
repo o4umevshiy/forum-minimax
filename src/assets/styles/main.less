@@ -112,7 +112,7 @@ section{
   font-family: @font-number;
 }
 .table-text{
-  font-size: 3.8vh;
+  font-size: 3.6vh;
   line-height: 3.4vh;
   font-family: @font-text;
   font-weight: bold;
@@ -146,46 +146,52 @@ section{
 }
 
 .box-list{
-  width: 88vw;
   position: absolute;
-  top: 59.9%; left: 2.4vw;
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity .3s ease;
+
+  width: 84vw;
+  top: 58%;
+  left: 4%;
 }
 .box-item{
   clear: both;
-  margin-bottom: 60px;
   position: relative;
-  min-height: 140px;
-  padding-left: 163px;
+  min-height: 11vw;
+  padding-left: 12vw;
+  margin-bottom: 3vw;
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 .box-index{
   font-family: @font-number;
-  font-size: 105px;
   background: @orange;
   float: left;
-  width: 136px;
-  height: 136px;
   text-align: center;
-  line-height: 158px;
-  border-radius: 14px;
   position: absolute;
   top:8px; left:0;
+  font-size: 8.6vw;
+  background: #ffa400;
+  width: 10.6vw;
+  height: 10.6vw;
+  line-height: 12.3vw;
+  border-radius: 1.6vw;
 }
 .box-name{
-  font-size: 46px;
+  font-size: 2.8vw;
   font-family: @font-text;
   font-weight: bold;
   margin-top: -20px;
 }
 .box-text{
-  font-size: 23px;
   font-family: @font-text;
   letter-spacing: 0.02em;
-  line-height: 32px;
   position: relative;
-  top: -5px;
+  font-size: 1.7vw;
+  line-height: 1.7vw;
+  top: -0.1vw;
 }
 
 .audio-box{
